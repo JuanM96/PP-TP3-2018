@@ -1,6 +1,6 @@
 {
   "name": "PP-Tp3",
-  "app_id": "",
+  "app_id": "482b0e80",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
