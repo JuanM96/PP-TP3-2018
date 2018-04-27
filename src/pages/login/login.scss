@@ -4,14 +4,16 @@ page-login {
     background: #0099ff;
     font: small-caps 100%/200% Arial;
     .logo-row {
-      padding-top: 50px;
-      padding-bottom: 20px;
+      text-align: center;
+      align-items: center;
+      margin-left: 15%;
+      width: 70%;
     }
  
     .login-box {
       background: #0099ff;
-      padding: 20px 20px 0px 20px;
-      margin-top: 30px;
+      padding: 0px 20px 0px 20px;
+      margin-top: 0px;
     }
  
     ion-row {
