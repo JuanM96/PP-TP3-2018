@@ -8,7 +8,7 @@ import { App } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  votacion:string;
   constructor(public navCtrl: NavController,public app:App,private auth: AuthService) {
 
   }
@@ -16,5 +16,11 @@ export class HomePage {
     this.auth.logout().subscribe(succ => {
       this.app.getRootNav().setRoot(LoginPage);
     });
+  }
+  public votar(){
+    alert("Votacion!");
+  }
+  public verResultados(){
+    alert("Resultados");
   }
 }

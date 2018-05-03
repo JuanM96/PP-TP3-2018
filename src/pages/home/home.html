@@ -4,19 +4,40 @@
   </ion-navbar>
 </ion-header> -->
 <ion-header>
-  <ion-navbar color="dark">
-    <ion-title>
-      Member Area
-    </ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="logout()">
-        <ion-icon name="log-out"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-
-</ion-content>
+    <ion-navbar color="dark">
+      <ion-title>
+        Bienvenido!
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="logout()">
+          <ion-icon name="log-out"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding class="home">
+    <div class="center titulo">
+      <h2>Seleccione Una Votacion:</h2>
+    </div>
+    <div class="center">
+      <ion-item>
+        <ion-label>Seleccione Una Votacion</ion-label>
+          <ion-select [(ngModel)]="votacion">
+            <ion-option value="plantas">Ponemos Plantas?</ion-option>
+            <ion-option value="matafuegos">Ponemos Matafuegos?</ion-option>
+          </ion-select>
+      </ion-item>
+    </div>
+    <div class="center img">
+      <img *ngIf = "votacion == 'plantas'" src="assets/plantas.png" alt="">
+    </div>
+    <div class="center imgMatafuego">
+      <img *ngIf = "votacion == 'matafuegos'" src="assets/matafuegos.png" alt="">
+    </div>
+    <div class="center button">
+      <button ion-button class="submit-btn" (click)="votar()">Votar!</button>
+      <button ion-button class="submit-btn" (click)="verResultados()">Resultados!</button>
+    </div>
+  </ion-content>
+  
