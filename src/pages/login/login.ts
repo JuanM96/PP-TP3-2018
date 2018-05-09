@@ -15,13 +15,13 @@ export class LoginPage {
   loading: Loading;
   registerCredentials = { email: '', password: '' };
   aux:boolean = false;
- 
+  usuario:string;
   constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) { }
  
   public createAccount() {
     this.nav.push(RegistroPage);
   }
- 
+//fin ionViewDidEnter
   /*public login() {
     this.aux = true;
     
@@ -45,7 +45,7 @@ export class LoginPage {
     this.showLoading();
     this.auth.signInWithEmail(this.registerCredentials)
       .then(
-        () => this.nav.setRoot(HomePage),
+        () => this.nav.setRoot(HomePage,{data:this.armarUsuario()}),
         error => this.showError(error.message)//console.log(error.message)
       );
   }
@@ -80,5 +80,18 @@ export class LoginPage {
     this.registerCredentials.email = "admin@admin.com";
     this.registerCredentials.password = "admin123";
     this.login2();
+  }
+  public armarUsuario(){
+    let email = this.registerCredentials.email;
+    let usuarioCortado = "";
+    for (let i = 0; i < email.length; i++) {
+      if (email[i] == "@") {
+        break;
+      }
+      else{
+        usuarioCortado = usuarioCortado + email[i];
+      }
+    }
+    return usuarioCortado;
   }
 }

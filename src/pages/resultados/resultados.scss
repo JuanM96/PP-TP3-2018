@@ -1,0 +1,42 @@
+page-resultados {
+    .plantas{
+        background-color: #06a800;
+        height: 100%;
+    }
+    .matafuegos{
+        background-color: #a80000;
+        height: 100%;
+    }
+    .plantas-img{
+        margin-top: 80%;
+        margin-bottom: 80%;
+    }
+    .matafuegos-img{
+        margin-top: 80%;
+        margin-bottom: 80%;
+    }
+    .row{
+        height: 100%;
+        width: 100%;
+    }
+    .center {
+        //padding: 0px 20px 0px 20px;
+        -webkit-align-content: stretch;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        -webkit-box-pack: center;
+        -webkit-flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -webkit-justify-content: center;
+        align-content: stretch;
+        align-items: center;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+}

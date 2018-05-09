@@ -10,7 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegistroPage } from '../pages/registro/registro';
 import { SplashAnimadoPage } from '../pages/splash-animado/splash-animado';
-
+import { Toast } from '@ionic-native/toast';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -20,6 +20,8 @@ import { AuthService } from '../providers/auth-service/auth-service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import { ResultadosPage } from '../pages/resultados/resultados';
 export const firebaseConfig = {
     apiKey: "AIzaSyAe_Ni8qNd-a6qPUbgKKYKJBBZWRKaTAlM",
     authDomain: "pp-2018-8b015.firebaseapp.com",
@@ -38,13 +40,15 @@ export const firebaseConfig = {
     LoginPage,
     TabsPage,
     RegistroPage,
-    SplashAnimadoPage
+    SplashAnimadoPage,
+    ResultadosPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig,'pp-2018'),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFirestoreModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,14 +59,16 @@ export const firebaseConfig = {
     LoginPage,
     RegistroPage,
     SplashAnimadoPage,
-    TabsPage
+    TabsPage,
+    ResultadosPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
-    AngularFireAuth
+    AngularFireAuth,
+    Toast
   ]
 })
 export class AppModule {}

@@ -6,7 +6,7 @@
 <ion-header>
     <ion-navbar color="dark">
       <ion-title>
-        Bienvenido!
+        Bienvenido! {{usuario}}
       </ion-title>
       <ion-buttons end>
         <button ion-button (click)="logout()">
@@ -22,10 +22,10 @@
     </div>
     <div class="center">
       <ion-item>
-        <ion-label>Seleccione Una Votacion</ion-label>
+        <ion-label>Si a ...</ion-label>
           <ion-select [(ngModel)]="votacion">
-            <ion-option value="plantas">Ponemos Plantas?</ion-option>
-            <ion-option value="matafuegos">Ponemos Matafuegos?</ion-option>
+            <ion-option value="plantas">Poner Plantas?</ion-option>
+            <ion-option value="matafuegos">Poner Matafuegos?</ion-option>
           </ion-select>
       </ion-item>
     </div>
@@ -36,7 +36,8 @@
       <img *ngIf = "votacion == 'matafuegos'" src="assets/matafuegos.png" alt="">
     </div>
     <div class="center button">
-      <button ion-button class="submit-btn" (click)="votar()">Votar!</button>
+      <button ion-button class="submit-btn" *ngIf = "votacion == 'plantas'" (click)="votar('plantas')">Votar!</button>
+      <button ion-button class="submit-btn" *ngIf = "votacion == 'matafuegos'" (click)="votar('matafuegos')">Votar!</button>
       <button ion-button class="submit-btn" (click)="verResultados()">Resultados!</button>
     </div>
   </ion-content>
